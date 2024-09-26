@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: #181C14;
+}
+
+header {
+    color: #697565;
+    display: grid;
+    font-size: 20px;
+    width: 100%;
+    padding: 8px;
+    grid-template-columns: auto auto;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 10%;
+}
+
+header nav {
+    text-align: center;
+    padding: 0 5px;
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+
+header nav i {
+    background-color: #697565;
+    color: #181C14;
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 5%;
+    transition: 0.5s ease;
+    cursor: pointer;
+
+    &&:hover {
+        background-color: transparent;
+        border-color: #697565;
+        color: #697565;
+    }
+
+    &&:active {
+        background-color: transparent;
+        border-color: #697565;
+        color: #697565;
+    }
+}
+
+main {
+    width: 100%;
+    margin: auto;
+    height: auto;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+}
+
+table {
+    color: #ECDFCC;
+    border-collapse: collapse;
+}
+
+table tr {
+    border: 2px solid #697565;
+    border-radius: 5%;
+}
+
+table tr:nth-of-type(even) {
+    background-color: #3C3D37;
+}
+
+table tr th {
+    font-size: 25px;
+    padding: 10px 25px;
+}
+
+table tr td {
+    font-size: 15px;
+    padding: 10px 25px;
+}
+
+.formName {
+    display: grid;
+    justify-content: center;
+}
+
+.form-group {
+    font-size: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 50% 60%;
+    justify-content: center;
+    max-width: 300px;
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: #697565;
+    color: #ECDFCC;
+    border: none;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.form-group label {
+    font-size: 25px;
+    text-align: left;
+}
+
+#boxes {
+    width: 100%;
+    height: 190px;
+    margin-bottom: 10%;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+    grid-template-areas:
+        "main sub1 "
+        "main sub2 ";
+}
+
+#boxes .container {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    background-color: #3C3D37;
+    color: #ECDFCC;
+
+    &&:nth-child(1) {
+        background-color: #697565;
+        grid-area: main;
+    }
+
+    &&:nth-child(2) {
+        grid-area: sub1;
+    }
+
+    &&:nth-child(3) {
+        grid-area: sub2;
+    }
+
+    &&:not(:first-child) {
+        display: grid;
+        grid-template-columns: 45% 55%;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px;
+        grid-template-areas:
+            "trend title "
+            "trend amount ";
+        place-items: center;
+    }
+}
+
+#boxes .container i {
+    grid-area: trend;
+    width: 40%;
+    height: 40%;
+    background-color: #ECDFCC;
+    color: #181C14;
+    text-align: center;
+    place-content: center;
+    border-radius: 10%;
+}
+
+#boxes .container .title {
+    grid-area: title;
+    font-size: 12px;
+    place-self: end;
+    width: 100%;
+}
+
+#boxes .container .amount {
+    grid-area: amount;
+    place-self: start;
+    font-size: 20px;
+    font-weight: bold;
+}
